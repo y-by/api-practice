@@ -1,0 +1,28 @@
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+  font-size: clamp(3vw, 24px, 10px);
+  text-align: center;
+  color: lightyellow;
+  display: grid;
+  place-content: center;
+  height: 98dvh;
+  background-image: url('https://images.unsplash.com/photo-1497506928652-500166625d53?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=722&q=80');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+#get-activity {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: red;
+  border: 1px solid lightcoral;
+  cursor: pointer;
+}
+.activity-name {
+  color: black;
+  background-color: yellow;
+  padding: 1em;
+  border-radius: 22px;
+  box-shadow: 0 0 15px 2px rgba(255, 255, 0, 0.702);
+}
