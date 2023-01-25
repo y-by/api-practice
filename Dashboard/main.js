@@ -1,30 +1,7 @@
-let randomNumber = Math.floor(Math.random() * 19)
-fetch("https://rickandmortyapi.com/api/character/")
-    .then(res => res.json())
-    .then(data => {
-      let character = data.results[randomNumber].image
-      console.log(character)
-        document.getElementById('character').style.backgroundImage = `url(${character})`
-    })
-
-
-
-
-
-/**
- * Challenge: get a random image from Unsplash and set it as the background
- * 
- * Part 1:
- * 
- * URL: https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=nature
- * (You can change the "query" at the end to whatever theme you want)
- * 
- * Change the body's backgroundImage to: 
- * `url(<insert the URL of the iamge from the API here>)`
- * 
- * (You may need to dig around the response body a bit to find this URL)
- * 
- * (Note I've already added some CSS to resize the image within the window.
- * Instructions for this were found on CSS Tricks: 
- * https://css-tricks.com/perfect-full-page-background-image/#awesome-easy-progressive-css3-way)
- */
+fetch("https://api.unsplash.com/photos/random?query=nature&orientation=landscape&client_id=UIY5IqxOXXs_MCEKt7IRiQk9u7bLWrgxM_xHN4iBDMU")
+  .then(res => res.json())
+  .then(data => {
+    const output = data.urls.full
+    console.log(output)
+    document.body.style.backgroundImage = `url(${output})`
+  })

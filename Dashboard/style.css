@@ -4,17 +4,10 @@ html, body {
 }
 
 body {
-  background: linear-gradient(90deg, hsla(4, 84%, 49%, 1) 0%, hsla(37, 89%, 52%, 1) 100%);
-  display: grid;
-  place-content: center;
-  height: 100vh;
-}
-#character {
-  /* border: solid 1px red; */
+  background: no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-  aspect-ratio: 1/1;
-  background-repeat: no-repeat;
-  background-position: center center;
-  width: 50vw;
-  height: 80vh;
+  overflow: hidden;
 }
