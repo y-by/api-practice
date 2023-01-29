@@ -1,4 +1,4 @@
-// fetch("https://ap.unsplash.com/photos/random?orientation=landscape&query=nature&client_id=UIY5IqxOXXs_MCEKt7IRiQk9u7bLWrgxM_xHN4iBDMU")
+// fetch("https://ap.unsplash.com/photos/random?orientation=landscape&query=nature&client_id=[Access-key]")
 //   .then(res => {
 //     return res.json()
 //   })
