@@ -31,8 +31,19 @@ body {
 .top {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   /* border: 5px solid purple; */
 }
+
+.crypto-details {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.crypto-details > img {
+  width: 35px;
+}
+
 
 .middle {
   text-align: center;
