@@ -1,4 +1,4 @@
-fetch("https://api.unsplash.com/photos/random?orientation=landscape&query=nature&client_id=[Access-key]")
+fetch("https://ap.unsplash.com/photos/random?orientation=landscape&query=nature&client_id=UIY5IqxOXXs_MCEKt7IRiQk9u7bLWrgxM_xHN4iBDMU")
   .then(res => {
     return res.json()
   })
@@ -22,14 +22,18 @@ fetch("https://api.unsplash.com/photos/random?orientation=landscape&query=nature
       return res.json()
     })
     .then(data => {
-      console.log(data.name)
-      console.log(data.image.small)
-      document.getElementById("crypto").innerHTML = `
+      document.getElementById("crypto-top").innerHTML = `
         <div class="crypto-details">
           <img src="${data.image.small}" alt="coin">
           <span>${data.name}</span>
         </div>
       `
+      document.getElementById("crypto").innerHTML += `
+        <p>🎯: $${data.market_data.current_price.usd}</p>
+        <p>👆: $${data.market_data.high_24h.usd}</p>
+        <p>👇: $${data.market_data.low_24h.usd}</p>
+      `
+
     })
     .catch(err => console.error(err))
 

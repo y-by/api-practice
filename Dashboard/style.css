@@ -31,7 +31,7 @@ body {
 .top {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   /* border: 5px solid purple; */
 }
 
@@ -41,9 +41,13 @@ body {
   gap: .5rem;
 }
 .crypto-details > img {
-  width: 35px;
+  width: 55px;
 }
 
+.weather {
+  padding-top: .5rem;
+  /* border: 1px solid yellow; */
+}
 
 .middle {
   text-align: center;
