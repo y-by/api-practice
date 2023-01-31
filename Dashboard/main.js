@@ -56,6 +56,9 @@ fetch(`https://api.unsplash.com/photos/random?orientation=landscape&query=nature
     // console.log(time)
 
     // add time short way
-    const date = new Date()
-    const time = date.toLocaleTimeString("en-US", {timeStyle: "short"})
-    document.getElementById("time").innerHTML = `<span>${time}</span>`
+    function getCurrentTime(){
+      const date = new Date()
+      const time = date.toLocaleTimeString("en-US", {timeStyle: "short"})
+      document.getElementById("time").textContent = time
+    }
+    setInterval(getCurrentTime, 100)
