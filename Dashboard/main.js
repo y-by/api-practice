@@ -1,5 +1,7 @@
+const key = config.MY_ACCESS_KEY
+
 // get image from unsplash
-fetch("https://api.unsplash.com/photos/random?orientation=landscape&query=nature&client_id=UIY5IqxOXXs_MCEKt7IRiQk9u7bLWrgxM_xHN4iBDMU")
+fetch(`https://api.unsplash.com/photos/random?orientation=landscape&query=nature&client_id=${key}`)
   .then(res => {
     return res.json()
   })
@@ -39,17 +41,21 @@ fetch("https://api.unsplash.com/photos/random?orientation=landscape&query=nature
     })
     .catch(err => console.error(err))
     
-    // add time
-    function formatAMPM(date) {
-      let hours = date.getHours()
-      let minutes = date.getMinutes()
-      const ampm = hours >= 12 ? 'pm' : 'am'
-      hours = hours % 12
-      hours = hours ? hours : 12 // the hour 0 should be 12
-      minutes = minutes < 10 ? '0' + minutes : minutes
-      const strTime = `${hours}:${minutes} ${ampm}`
-      return strTime
-    }
-    const time = formatAMPM(new Date)
-    console.log(time)
+    // add time long way
+    // function formatAMPM(date) {
+    //   let hours = date.getHours()
+    //   let minutes = date.getMinutes()
+    //   const ampm = hours >= 12 ? 'pm' : 'am'
+    //   hours = hours % 12
+    //   hours = hours ? hours : 12 // the hour 0 should be 12
+    //   minutes = minutes < 10 ? '0' + minutes : minutes
+    //   const strTime = `${hours}:${minutes} ${ampm}`
+    //   return strTime
+    // }
+    // const time = formatAMPM(new Date)
+    // console.log(time)
+
+    // add time short way
+    const date = new Date()
+    const time = date.toLocaleTimeString("en-US", {timeStyle: "short"})
     document.getElementById("time").innerHTML = `<span>${time}</span>`
