@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700&display=swap');
 * {
   box-sizing: border-box;
   margin: 0;
@@ -11,10 +12,9 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  /* overflow: hidden; */
   color: white;
   text-shadow: 1px 1px 2px #474747;
-  font-family: sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 2em;
   font-weight: 300;
   text-shadow: 0 0 20px #aaaaaa;
@@ -26,13 +26,12 @@ body {
   justify-content: space-between;
   padding: 1rem;
   height: 100vh;
-  /* border: 5px solid purple; */
 }
 .top {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  /* border: 5px solid purple; */
+  font-weight: 400;
 }
 
 .crypto-details {
@@ -46,16 +45,17 @@ body {
 
 .weather {
   padding-top: .5rem;
-  /* border: 1px solid yellow; */
 }
 
 .middle {
   text-align: center;
-  /* border: 5px solid green; */
-  /* it's a good option to use the margin -> remove justify-content from the .container and text-align from .middle */
-  /* margin: auto; */
 }
 
 .clock {
   font-size: 4em;
+}
+
+.weather-icon {
+  width: 3.5rem;
+  transform: translateY(.5em);
 }

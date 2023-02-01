@@ -1,7 +1,8 @@
-const key = config.MY_ACCESS_KEY
+const unsplash_key = config.MY_IMAGES_ACCESS_KEY
+const weather_key = config.MY_WEATHER_API_KEY
 
 // get image from unsplash
-fetch(`https://api.unsplash.com/photos/random?orientation=landscape&query=nature&client_id=${key}`)
+fetch(`https://api.unsplash.com/photos/random?orientation=landscape&query=nature&client_id=${unsplash_key}`)
   .then(res => {
     return res.json()
   })
@@ -62,3 +63,27 @@ fetch(`https://api.unsplash.com/photos/random?orientation=landscape&query=nature
       document.getElementById("time").textContent = time
     }
     setInterval(getCurrentTime, 100)
+
+
+    navigator.geolocation.getCurrentPosition(position => {
+      fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${weather_key}`)
+      .then(res => {
+        if (!res.ok) {
+          throw Error("weather data not available")
+        }
+        return res.json()
+      })
+      .then(data => {
+        const location = data.name
+        const country = data.sys.country
+        const celcius = data.main.temp - 273.15
+        const description = data.weather[0].description
+        const icon = data.weather[0].icon
+        document.getElementById("weather").innerHTML = `
+            
+            <span class="location">${celcius.toFixed(1)} °C ${location} ${country}</span><br>
+            <span class= "description">${description}</span><img class="weather-icon" src=" http://openweathermap.org/img/wn/${icon}@2x.png">
+        `
+      })
+    });
+    
